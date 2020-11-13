@@ -7,7 +7,7 @@ package examen1_douglasrivera;
 
 /**
  *
- * @author famii
+ * @author Douglas Rubi
  */
 public class Examen1_DouglasRivera {
 
@@ -15,7 +15,7 @@ public class Examen1_DouglasRivera {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
     
 }
