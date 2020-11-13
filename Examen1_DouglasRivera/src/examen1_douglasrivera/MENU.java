@@ -86,9 +86,9 @@ public class MENU extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        lblVivas = new javax.swing.JLabel();
+        lblDesaparecidas = new javax.swing.JLabel();
+        lblJacksons = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         TxtNombreC = new javax.swing.JTextField();
@@ -106,14 +106,28 @@ public class MENU extends javax.swing.JFrame {
         cbxArmasC = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
         chxViva = new javax.swing.JCheckBox();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        cbxTipoCampista = new javax.swing.JComboBox<>();
+        TxtVida = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        TxtDanio = new javax.swing.JTextField();
+        TxtTipoArma = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
+        cbxArmasCrud = new javax.swing.JComboBox<>();
+        btnAgregarA = new javax.swing.JButton();
+        btnEditarA = new javax.swing.JButton();
+        btnEliminarA = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
         jLabel5.setText("Nombre:");
@@ -302,11 +316,11 @@ public class MENU extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
         jLabel12.setText("Jason Virgins:");
 
-        jLabel13.setText("jLabel13");
+        lblVivas.setText("jLabel13");
 
-        jLabel14.setText("jLabel14");
+        lblDesaparecidas.setText("jLabel14");
 
-        jLabel15.setText("jLabel15");
+        lblJacksons.setText("jLabel15");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -318,7 +332,7 @@ public class MENU extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel13))
+                        .addComponent(lblVivas))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -328,8 +342,8 @@ public class MENU extends javax.swing.JFrame {
                                 .addComponent(jLabel12)
                                 .addGap(15, 15, 15)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15))))
+                            .addComponent(lblDesaparecidas)
+                            .addComponent(lblJacksons))))
                 .addContainerGap(389, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -338,15 +352,15 @@ public class MENU extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel13))
+                    .addComponent(lblVivas))
                 .addGap(60, 60, 60)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jLabel14))
+                    .addComponent(lblDesaparecidas))
                 .addGap(71, 71, 71)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jLabel15))
+                    .addComponent(lblJacksons))
                 .addContainerGap(271, Short.MAX_VALUE))
         );
 
@@ -368,6 +382,11 @@ public class MENU extends javax.swing.JFrame {
         jLabel3.setText("Sexo:");
 
         jRadioButton1.setText("M");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         jRadioButton2.setText("F");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -391,8 +410,18 @@ public class MENU extends javax.swing.JFrame {
         });
 
         btnEditarC.setText("Editar");
+        btnEditarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarCActionPerformed(evt);
+            }
+        });
 
         btnEliminarC.setText("Eliminar");
+        btnEliminarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarCActionPerformed(evt);
+            }
+        });
 
         cbxArmasC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbxArmasC.addItemListener(new java.awt.event.ItemListener() {
@@ -409,6 +438,12 @@ public class MENU extends javax.swing.JFrame {
             }
         });
 
+        jLabel22.setText("Tipo campista:");
+
+        jLabel23.setText("Puntos de vida:");
+
+        cbxTipoCampista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Supervisor", "Campista" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -424,7 +459,8 @@ public class MENU extends javax.swing.JFrame {
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel21))
                                 .addGap(26, 26, 26)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -436,19 +472,24 @@ public class MENU extends javax.swing.JFrame {
                                         .addComponent(TxtEdadC))
                                     .addComponent(cbxArmasC, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(chxViva))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(74, 74, 74)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel23))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbxTipoCampista, 0, 252, Short.MAX_VALUE)
+                            .addComponent(TxtVida))
+                        .addContainerGap(49, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cbxCampistas, 0, 267, Short.MAX_VALUE)
+                        .addComponent(cbxCampistas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(556, 556, 556))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel21)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnAgregarC)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnEditarC)
-                                .addGap(29, 29, 29)
-                                .addComponent(btnEliminarC)))
+                        .addComponent(btnAgregarC)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEditarC)
+                        .addGap(29, 29, 29)
+                        .addComponent(btnEliminarC)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -457,20 +498,24 @@ public class MENU extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(TxtNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22)
+                    .addComponent(cbxTipoCampista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(TxtEdadC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtEdadC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23)
+                    .addComponent(TxtVida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jRadioButton1)
                     .addComponent(jRadioButton2))
                 .addGap(7, 7, 7)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(chxViva))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(chxViva)
+                    .addComponent(jLabel21))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -495,13 +540,31 @@ public class MENU extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
         jLabel17.setText("Daño:");
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        TxtTipoArma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                TxtTipoArmaActionPerformed(evt);
             }
         });
 
-        jLabel19.setText("jLabel19");
+        jLabel19.setText("Lsitado de armas");
+
+        cbxArmasCrud.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnAgregarA.setText("Agregar");
+        btnAgregarA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarAActionPerformed(evt);
+            }
+        });
+
+        btnEditarA.setText("Editar");
+        btnEditarA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarAActionPerformed(evt);
+            }
+        });
+
+        btnEliminarA.setText("Eliminar");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -510,6 +573,12 @@ public class MENU extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(btnAgregarA)
+                        .addGap(43, 43, 43)
+                        .addComponent(btnEditarA)
+                        .addGap(54, 54, 54)
+                        .addComponent(btnEliminarA))
                     .addComponent(jLabel19)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -517,8 +586,9 @@ public class MENU extends javax.swing.JFrame {
                             .addComponent(jLabel17))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                            .addComponent(jTextField8))))
+                            .addComponent(TxtTipoArma, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                            .addComponent(TxtDanio)))
+                    .addComponent(cbxArmasCrud, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(406, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -527,14 +597,21 @@ public class MENU extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtTipoArma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtDanio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jLabel19)
-                .addContainerGap(378, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(cbxArmasCrud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregarA)
+                    .addComponent(btnEliminarA)
+                    .addComponent(btnEditarA))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Armas", jPanel5);
@@ -560,7 +637,9 @@ public class MENU extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
+        if(this.jRadioButton2.isSelected()){
+            this.Sexo = "F";
+        }
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void TxtNombreCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreCActionPerformed
@@ -575,9 +654,9 @@ public class MENU extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtPersonasJActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    private void TxtTipoArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTipoArmaActionPerformed
+       
+    }//GEN-LAST:event_TxtTipoArmaActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         boolean valido = true;
@@ -712,8 +791,126 @@ public class MENU extends javax.swing.JFrame {
     }//GEN-LAST:event_chxVivaItemStateChanged
 
     private void btnAgregarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCActionPerformed
-        
+        boolean valido = true;
+        if (this.TxtNombreC.getText() == null || "".equals(this.TxtNombreC.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el nombre");
+           valido = false;
+        }
+        if (this.TxtVida.getText() == null || "".equals(this.TxtVida.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese los puntos de vida");
+           valido = false;
+        }
+        if (this.TxtEdadC.getText() == null || "".equals(this.TxtEdadC.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese la edad");
+            valido = false;
+        }
+        if (!this.chxViva.isSelected()) {
+            JOptionPane.showConfirmDialog(this, "La persona debe estar viva al registrarse");
+            valido = false;
+        }
+        if (this.Sexo == null || "".equals(this.Sexo)) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el genero");
+            valido = false;
+        }
+        if (this.Arma == null || "".equals(this.Arma)) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el tipo de arma");
+            valido = false;
+        }
+        if(valido) {
+            // String Supervisores, String Campista, String Vida, String Nombre, int Edad, String Sexo, String Arma
+            this.personas.add(new Campistas(this.cbxTipoCampista.getSelectedItem().toString(), TxtVida.getText(), TxtNombreC.getText(), Integer.parseInt(TxtEdadC.getText()), Sexo, Arma));
+            this.cbxCampistas.addItem( TxtNombreC.getText());
+        }
     }//GEN-LAST:event_btnAgregarCActionPerformed
+
+    private void btnEditarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCActionPerformed
+        boolean valido = true;
+        if (this.TxtNombreC.getText() == null || "".equals(this.TxtNombreC.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el nombre");
+           valido = false;
+        }
+        if (this.TxtVida.getText() == null || "".equals(this.TxtVida.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese los puntos de vida");
+           valido = false;
+        }
+        if (this.TxtEdadC.getText() == null || "".equals(this.TxtEdadC.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese la edad");
+            valido = false;
+        }
+        if (!this.chxViva.isSelected()) {
+            JOptionPane.showConfirmDialog(this, "La persona debe estar viva al registrarse");
+            valido = false;
+        }
+        if (this.Sexo == null || "".equals(this.Sexo)) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el genero");
+            valido = false;
+        }
+        if (this.Arma == null || "".equals(this.Arma)) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el tipo de arma");
+            valido = false;
+        }
+        ((Campistas) personas.get(indice)).Vida = TxtVida.getText();
+        personas.get(indice).Nombre = TxtNombreC.getText();
+        personas.get(indice).Edad = Integer.parseInt(TxtEdadC.getText());
+        personas.get(indice).Arma = this.Arma;
+        personas.get(indice).Sexo = this.Sexo;
+    }//GEN-LAST:event_btnEditarCActionPerformed
+
+    private void btnEliminarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCActionPerformed
+        this.personas.remove(indice);
+        this.cbxCampistas.remove(indice);
+    }//GEN-LAST:event_btnEliminarCActionPerformed
+
+    private void btnAgregarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAActionPerformed
+        boolean valido = true;
+        if (this.TxtTipoArma.getText() == null || "".equals(this.TxtTipoArma.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el tipo de arma");
+            valido = false;
+        }
+        if (this.TxtDanio.getText() == null || "".equals(this.TxtDanio.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el daño arma");
+            valido = false;
+        }
+    }//GEN-LAST:event_btnAgregarAActionPerformed
+
+    private void btnEditarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAActionPerformed
+        boolean valido = true;
+        if (this.TxtTipoArma.getText() == null || "".equals(this.TxtTipoArma.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el tipo de arma");
+            valido = false;
+        }
+        if (this.TxtDanio.getText() == null || "".equals(this.TxtDanio.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el daño arma");
+            valido = false;
+        }
+    }//GEN-LAST:event_btnEditarAActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        if(this.jRadioButton1.isSelected()){
+            this.Sexo = "M";
+        }
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        int vivas = 0;
+        int desaparecidas = 0;
+        if(this.jTabbedPane1.getSelectedIndex()==1){
+            
+            for (int i = 0; i < personas.size(); i++) {
+                if(Integer.parseInt(((Campistas)personas.get(i)).Vida) <=0 ){
+                    desaparecidas++;
+                }
+                 if(Integer.parseInt(((Campistas)personas.get(i)).Vida) > 0 ){
+                    vivas++;
+                }
+            }
+            
+            this.lblVivas.setText(vivas+"");
+            this.lblDesaparecidas.setText(desaparecidas+"");
+            this.lblJacksons.setText(this.jackson.size()+"");
+            
+        }
+    }//GEN-LAST:event_jTabbedPane1StateChanged
 
     /**
      * @param args the command line arguments
@@ -751,30 +948,35 @@ public class MENU extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TxtDanio;
     private javax.swing.JTextField TxtEdadC;
     private javax.swing.JTextField TxtEdadJ;
     private javax.swing.JTextField TxtNombreC;
     private javax.swing.JTextField TxtNombreJ;
     private javax.swing.JTextField TxtPersonasJ;
+    private javax.swing.JTextField TxtTipoArma;
+    private javax.swing.JTextField TxtVida;
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnAgregarA;
     private javax.swing.JButton btnAgregarC;
     private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEditarA;
     private javax.swing.JButton btnEditarC;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminarA;
     private javax.swing.JButton btnEliminarC;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbxArmas;
     private javax.swing.JComboBox<String> cbxArmasC;
+    private javax.swing.JComboBox<String> cbxArmasCrud;
     private javax.swing.JComboBox<String> cbxCampistas;
     private javax.swing.JComboBox<String> cbxJasons;
+    private javax.swing.JComboBox<String> cbxTipoCampista;
     private javax.swing.JCheckBox chxViva;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -782,6 +984,8 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -799,7 +1003,8 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblDesaparecidas;
+    private javax.swing.JLabel lblJacksons;
+    private javax.swing.JLabel lblVivas;
     // End of variables declaration//GEN-END:variables
 }

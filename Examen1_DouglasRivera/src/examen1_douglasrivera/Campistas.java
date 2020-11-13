@@ -10,41 +10,31 @@ package examen1_douglasrivera;
  * @author famii
  */
 public class Campistas extends Personas {
-    String Supervisores;
-    String Campista;
     String Vida;
+    String TipoCampista;
 
     public Campistas() {
     }
 
-    public Campistas(String Supervisores, String Campista, String Vida) {
-        this.Supervisores = Supervisores;
-        this.Campista = Campista;
+    public Campistas( String TipoCampista, String Vida) {
+        this.TipoCampista = TipoCampista;
         this.Vida = Vida;
     }
 
-    public Campistas(String Supervisores, String Campista, String Vida, String Nombre, int Edad, String Sexo, String Arma) {
+    public Campistas( String TipoCampista, String Vida, String Nombre, int Edad, String Sexo, String Arma) {
         super(Nombre, Edad, Sexo, Arma);
-        this.Supervisores = Supervisores;
-        this.Campista = Campista;
+        this.TipoCampista = TipoCampista;
         this.Vida = Vida;
     }
 
-    public String getSupervisores() {
-        return Supervisores;
+    public String getTipoCampista() {
+        return TipoCampista;
     }
 
-    public void setSupervisores(String Supervisores) {
-        this.Supervisores = Supervisores;
+    public void setTipoCampista(String TipoCampista) {
+        this.TipoCampista = TipoCampista;
     }
 
-    public String getCampista() {
-        return Campista;
-    }
-
-    public void setCampista(String Campista) {
-        this.Campista = Campista;
-    }
 
     public String getVida() {
         return Vida;
