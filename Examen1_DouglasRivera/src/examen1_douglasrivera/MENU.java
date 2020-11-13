@@ -5,6 +5,9 @@
  */
 package examen1_douglasrivera;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author famii
@@ -14,8 +17,40 @@ public class MENU extends javax.swing.JFrame {
     /**
      * Creates new form MENU
      */
+    private ArrayList<Personas> jackson = new ArrayList<>();
+    private ArrayList<Armas> armas = new ArrayList<>();
+    private ArrayList<Personas> personas = new ArrayList<>();
+    private String Arma = "";
+    private String Sexo = "";
+    private int indice = -1;
+    private boolean estaViva = true;
+
     public MENU() {
         initComponents();
+        init();
+    }
+
+    private void init() {
+       this.armas.add(new Armas("Sierra", 10));
+       this.armas.add(new Armas("Hacha", 8));
+       this.armas.add(new Armas("Pistola", 20));
+       this.cbxArmas.removeAllItems();
+       this.cbxJasons.removeAllItems();
+        for (int i = 0; i < armas.size(); i++) {
+            this.cbxArmas.addItem(armas.get(i).TipoArma);
+        }
+    }
+
+    private void agregarJason(JaksonVirgens jackson) {
+        this.jackson.add(jackson);
+    }
+
+    private void agregarPersona(Personas persona) {
+        this.personas.add(persona);
+    }
+
+    private void agregarArma(Armas arma) {
+        this.armas.add(arma);
     }
 
     /**
@@ -27,21 +62,658 @@ public class MENU extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        TxtNombreJ = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        TxtEdadJ = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        TxtPersonasJ = new javax.swing.JTextField();
+        cbxArmas = new javax.swing.JComboBox<>();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        cbxJasons = new javax.swing.JComboBox<>();
+        btnAgregar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        TxtNombreC = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        TxtEdadC = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        cbxCampistas = new javax.swing.JComboBox<>();
+        btnAgregarC = new javax.swing.JButton();
+        btnEditarC = new javax.swing.JButton();
+        btnEliminarC = new javax.swing.JButton();
+        cbxArmasC = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        chxViva = new javax.swing.JCheckBox();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel5.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel5.setText("Nombre:");
+
+        TxtNombreJ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtNombreJActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel6.setText("Edad:");
+
+        jLabel7.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel7.setText("Sexo:");
+
+        jLabel8.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel8.setText("Personas desaparecidas:");
+
+        jLabel9.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel9.setText("Arma:");
+
+        TxtPersonasJ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtPersonasJActionPerformed(evt);
+            }
+        });
+
+        cbxArmas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxArmas.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxArmasItemStateChanged(evt);
+            }
+        });
+        cbxArmas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxArmasActionPerformed(evt);
+            }
+        });
+
+        jRadioButton3.setText("F");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton4.setText("M");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+
+        cbxJasons.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxJasons.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxJasonsItemStateChanged(evt);
+            }
+        });
+
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Lista de Jason");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnAgregar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditar)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnEliminar))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(cbxJasons, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel9)
+                                .addComponent(jLabel8))
+                            .addGap(34, 34, 34)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(TxtNombreJ)
+                                    .addComponent(TxtEdadJ)
+                                    .addComponent(TxtPersonasJ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                                    .addComponent(cbxArmas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jRadioButton3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jRadioButton4))))))
+                .addContainerGap(299, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(TxtNombreJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(TxtEdadJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton4))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(cbxArmas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(TxtPersonasJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel18)
+                .addGap(23, 23, 23)
+                .addComponent(cbxJasons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregar)
+                    .addComponent(btnEditar)
+                    .addComponent(btnEliminar))
+                .addContainerGap(137, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 848, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 552, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Jason", jPanel2);
+
+        jLabel10.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel10.setText("Personas vivas:");
+
+        jLabel11.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel11.setText("Personas desaparecidas:");
+
+        jLabel12.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel12.setText("Jason Virgins:");
+
+        jLabel13.setText("jLabel13");
+
+        jLabel14.setText("jLabel14");
+
+        jLabel15.setText("jLabel15");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(70, 70, 70))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(15, 15, 15)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15))))
+                .addContainerGap(389, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel13))
+                .addGap(60, 60, 60)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel14))
+                .addGap(71, 71, 71)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel15))
+                .addContainerGap(271, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Estadisticas", jPanel3);
+
+        jLabel1.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel1.setText("Nombre:");
+
+        TxtNombreC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtNombreCActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel2.setText("Edad:");
+
+        jLabel3.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel3.setText("Sexo:");
+
+        jRadioButton1.setText("M");
+
+        jRadioButton2.setText("F");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel4.setText("Arma:");
+
+        jLabel20.setText("Listado de campistas");
+
+        cbxCampistas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnAgregarC.setText("Agregar");
+        btnAgregarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarCActionPerformed(evt);
+            }
+        });
+
+        btnEditarC.setText("Editar");
+
+        btnEliminarC.setText("Eliminar");
+
+        cbxArmasC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxArmasC.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxArmasCItemStateChanged(evt);
+            }
+        });
+
+        jLabel21.setText("Viva:");
+
+        chxViva.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chxVivaItemStateChanged(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel20)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jRadioButton1)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jRadioButton2))
+                                        .addComponent(TxtNombreC, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                                        .addComponent(TxtEdadC))
+                                    .addComponent(cbxArmasC, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chxViva))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cbxCampistas, 0, 267, Short.MAX_VALUE)
+                        .addGap(556, 556, 556))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnAgregarC)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEditarC)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnEliminarC)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(TxtNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(TxtEdadC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(chxViva))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(cbxArmasC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(cbxCampistas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregarC)
+                    .addComponent(btnEditarC)
+                    .addComponent(btnEliminarC))
+                .addContainerGap(171, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Campistas", jPanel1);
+
+        jLabel16.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel16.setText("Tipo de arma:");
+
+        jLabel17.setFont(new java.awt.Font("SimSun", 0, 24)); // NOI18N
+        jLabel17.setText("Daño:");
+
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("jLabel19");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                            .addComponent(jTextField8))))
+                .addContainerGap(406, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(jLabel19)
+                .addContainerGap(378, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Armas", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 877, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void TxtNombreCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtNombreCActionPerformed
+
+    private void TxtNombreJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtNombreJActionPerformed
+
+    private void TxtPersonasJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtPersonasJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtPersonasJActionPerformed
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        boolean valido = true;
+        if (this.TxtNombreJ.getText() == null || "".equals(this.TxtNombreJ.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el nombre");
+           valido = false;
+        }
+        if (this.TxtEdadJ.getText() == null || "".equals(this.TxtEdadJ.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese la edad");
+            valido = false;
+        }
+        if (this.TxtPersonasJ.getText() == null || "".equals(this.TxtPersonasJ.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el el total de personas desaparecidas");
+            valido = false;
+        }
+        if (this.Sexo == null || "".equals(this.Sexo)) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el genero");
+            valido = false;
+        }
+        if (this.Arma == null || "".equals(this.Arma)) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el tipo de arma");
+            valido = false;
+        }
+        if(valido) {
+            this.agregarJason(new JaksonVirgens(Integer.parseInt(TxtPersonasJ.getText()), TxtNombreJ.getText(), Integer.parseInt(TxtEdadJ.getText()), "", ""));
+            this.cbxJasons.addItem( TxtNombreJ.getText());
+        }
+        
+
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        if (this.jRadioButton3.isSelected()) {
+            this.Sexo = "F";
+        }
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        if (this.jRadioButton4.isSelected()) {
+            this.Sexo = "M";
+        }
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void cbxArmasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxArmasItemStateChanged
+        if (evt.getSource() == cbxArmas) {
+            String seleccionado = (String) cbxArmas.getSelectedItem();
+            this.Arma = seleccionado;
+        }
+    }//GEN-LAST:event_cbxArmasItemStateChanged
+
+    private void cbxJasonsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxJasonsItemStateChanged
+        if (evt.getSource() == cbxJasons) {
+            String seleccionado = (String) cbxJasons.getSelectedItem();
+            for (int i = 0; i < jackson.size(); i++) {
+                if (jackson.get(i).Nombre.equals(seleccionado)) {
+                    TxtNombreJ.setText(jackson.get(i).Nombre);
+                    TxtEdadJ.setText(jackson.get(i).Edad + "");
+                    TxtPersonasJ.setText(((JaksonVirgens) jackson.get(i)).Cantidad_Desaparecidos + "");
+                    if (((JaksonVirgens) jackson.get(i)).Sexo.equals("F")) {
+                        this.jRadioButton3.setSelected(true);
+                    } else {
+                        this.jRadioButton4.setSelected(true);
+                    }
+                    this.cbxArmas.setSelectedItem(jackson.get(i).Arma);
+                    this.indice = i;
+                    this.Arma = jackson.get(i).Arma;
+                    this.Sexo = jackson.get(i).Sexo;
+                }
+            }
+        }
+    }//GEN-LAST:event_cbxJasonsItemStateChanged
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        if (this.TxtNombreJ.getText() == null || "".equals(this.TxtNombreJ.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el nombre");
+        }
+        if (this.TxtEdadJ.getText() == null || "".equals(this.TxtEdadJ.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese la edad");
+        }
+        if (this.TxtPersonasJ.getText() == null || "".equals(this.TxtPersonasJ.getText())) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el el total de personas desaparecidas");
+        }
+        if (this.Sexo == null || "".equals(this.Sexo)) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el genero");
+        }
+        if (this.Arma == null || "".equals(this.Arma)) {
+            JOptionPane.showConfirmDialog(this, "Ingrese el tipo de arma");
+        }
+
+        ((JaksonVirgens) jackson.get(indice)).Cantidad_Desaparecidos = Integer.parseInt(TxtPersonasJ.getText());
+        jackson.get(indice).Nombre = TxtNombreJ.getText();
+        jackson.get(indice).Edad = Integer.parseInt(TxtEdadJ.getText());
+        jackson.get(indice).Arma = this.Arma;
+        jackson.get(indice).Sexo = this.Sexo;
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        this.jackson.remove(indice);
+        this.cbxJasons.remove(indice);
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void cbxArmasCItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxArmasCItemStateChanged
+        // TODO aqui va la logica de mostrar datos en controles de GUI
+        if (evt.getSource() == cbxCampistas) {
+            String seleccionado = (String) cbxCampistas.getSelectedItem();
+            for (int i = 0; i < personas.size(); i++) {
+                if (personas.get(i).Nombre.equals(seleccionado)) {
+                    TxtNombreC.setText(personas.get(i).Nombre);
+                    TxtEdadC.setText(personas.get(i).Edad + "");
+                    chxViva.setSelected(estaViva);
+                    if (((JaksonVirgens) personas.get(i)).Sexo.equals("F")) {
+                        this.jRadioButton2.setSelected(true);
+                    } else {
+                        this.jRadioButton1.setSelected(true);
+                    }
+                    this.cbxArmas.setSelectedItem(personas.get(i).Arma);
+                    this.indice = i;
+                    this.Arma = personas.get(i).Arma;
+                    this.Sexo = personas.get(i).Sexo;
+                }
+            }
+        }
+    }//GEN-LAST:event_cbxArmasCItemStateChanged
+
+    private void cbxArmasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxArmasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxArmasActionPerformed
+
+    private void chxVivaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chxVivaItemStateChanged
+         this.estaViva =  evt.getStateChange()==1 ? true : false;
+    }//GEN-LAST:event_chxVivaItemStateChanged
+
+    private void btnAgregarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCActionPerformed
+        
+    }//GEN-LAST:event_btnAgregarCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +751,55 @@ public class MENU extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TxtEdadC;
+    private javax.swing.JTextField TxtEdadJ;
+    private javax.swing.JTextField TxtNombreC;
+    private javax.swing.JTextField TxtNombreJ;
+    private javax.swing.JTextField TxtPersonasJ;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnAgregarC;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEditarC;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminarC;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> cbxArmas;
+    private javax.swing.JComboBox<String> cbxArmasC;
+    private javax.swing.JComboBox<String> cbxCampistas;
+    private javax.swing.JComboBox<String> cbxJasons;
+    private javax.swing.JCheckBox chxViva;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
