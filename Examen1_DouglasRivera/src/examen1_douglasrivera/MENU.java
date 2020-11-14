@@ -565,6 +565,11 @@ public class MENU extends javax.swing.JFrame {
         });
 
         btnEliminarA.setText("Eliminar");
+        btnEliminarA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarAActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -883,6 +888,8 @@ public class MENU extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog(this, "Ingrese el daño arma");
             valido = false;
         }
+        armas.get(indice).TipoArma = TxtTipoArma.getText();
+        armas.get(indice).Porcentaje = Integer.parseInt(TxtDanio.getText());
     }//GEN-LAST:event_btnEditarAActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -911,6 +918,11 @@ public class MENU extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void btnEliminarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAActionPerformed
+         this.armas.remove(indice);
+        this.cbxArmas.remove(indice);
+    }//GEN-LAST:event_btnEliminarAActionPerformed
 
     /**
      * @param args the command line arguments
